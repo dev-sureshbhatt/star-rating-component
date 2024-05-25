@@ -10,10 +10,16 @@ const StarRatingMainForm = () => {
     const [communicationRating, setCommunicationRating] = useState(0)
     const [reccomendationRating, setRecommendationRating] = useState(null)
 
+    function handleReset(){
+        setSafetyRating(0)
+        setCommunicationRating(0)
+        setRecommendationRating(null)
+    }
+
     function handleSubmit(ev){
         ev.preventDefault()
         alert(
-            `Safety Rating: ${safetyRating}, Communication Rating: ${communicationRating}`
+            `Safety Rating: ${safetyRating}, Communication Rating: ${communicationRating}, Reccomendation Rating: ${reccomendationRating}`
         )
         
     }
@@ -22,6 +28,7 @@ const StarRatingMainForm = () => {
 
 
   return (
+    <div className='py-3'>
     <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <div className='flex flex-col'>
             <span className='text-lg'>Safety</span>
@@ -48,6 +55,12 @@ const StarRatingMainForm = () => {
         </div>
         <button className='border-4 hover:bg-green-300 py-2'>Submit</button> 
     </form>
+    <div className='text-center py-2'>
+    <button onClick={handleReset}>Reset</button>
+    </div>
+    
+    </div>
+    
   )
 }
 

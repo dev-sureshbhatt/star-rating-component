@@ -3,7 +3,7 @@ import Thumb from './Thumb';
 
 const ThumbsRating = ({ rating, setRating }) => {
   return (
-    <div className="flex justify-evenly">
+    <div className="flex justify-evenly py-2">
       <Thumb
         type="up"
         selected={rating === 'up'}
