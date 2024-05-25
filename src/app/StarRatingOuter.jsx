@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import Star from './Star'
 
 
-const StarRatingOuter = ({totalStars = 5}) => {
+const StarRatingOuter = ({totalStars = 5, rating, setRating}) => {
 
-    const [rating, setRating] = useState(0)
+    // const [rating, setRating] = useState(0)
     const [hoverRating, setHoverRating] = useState(0)
 
   return (
